@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HRSeatServer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="LoginReturnStatus">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ADMIN">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="NOUSERSEAT">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="OK">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PWDERROR">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ALREADYOK">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="NOUSER">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="WRONGSEAT">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="LoginReturnStatus" nillable="true" type="tns:LoginReturnStatus" />
+  <xs:element name="DataSet_HRSeat.ContactsEXPDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.ContactsEXPDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="ContactsEXPDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.ContactsEXPByNameDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.ContactsEXPByNameDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="ContactsEXPByNameDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.Hr_Employment_DivisionDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.Hr_Employment_DivisionDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="Hr_Employment_DivisionDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.Hr_EP_FloorDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.Hr_EP_FloorDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="Hr_EP_FloorDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.Hr_EP_FloorNoImgDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.Hr_EP_FloorNoImgDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="Hr_EP_FloorNoImgDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.Hr_EP_SeatDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.Hr_EP_SeatDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="Hr_EP_SeatDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.DivisionEmployeeDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.DivisionEmployeeDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="DivisionEmployeeDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.Hr_EmployeeDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.Hr_EmployeeDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="Hr_EmployeeDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.EmployeeStatusDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.EmployeeStatusDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="EmployeeStatusDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.Hr_Employee_TemporaryDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.Hr_Employee_TemporaryDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="Hr_Employee_TemporaryDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.Hr_InternDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.Hr_InternDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="Hr_InternDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.Hr_EP_RoomDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.Hr_EP_RoomDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="Hr_EP_RoomDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataSet_HRSeat.Hr_EP_Online_HistoryDataTable" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet_HRSeat.Hr_EP_Online_HistoryDataTable" Namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+      </xs:sequence>
+      <xs:attribute fixed="http://tempuri.org/DataSet_HRSeat.xsd" name="namespace" />
+      <xs:attribute fixed="Hr_EP_Online_HistoryDataTable" name="tableTypeName" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

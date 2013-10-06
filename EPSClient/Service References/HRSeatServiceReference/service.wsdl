@@ -1,0 +1,1081 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HRSeatService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IHRSeat_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/HRSeatServer" />
+      <xsd:import namespace="http://tempuri.org/DataSet_HRSeat.xsd" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHRSeat_CheckOnline_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOnline" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_CheckOnline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOnlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteFloor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFloor" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteFloor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFloorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteRoomsAndSeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoomsAndSeats" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteRoomsAndSeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoomsAndSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteSeatByRoomID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeatByRoomID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteSeatByRoomID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeatByRoomIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteSeatBySeatID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeatBySeatID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteSeatBySeatID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeatBySeatIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteSeatsByFloorID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeatsByFloorID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_DeleteSeatsByFloorID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeatsByFloorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_ExportContracts_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportContracts" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_ExportContracts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportContractsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_ExportContractsByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportContractsByName" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_ExportContractsByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportContractsByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetAllDivisions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDivisions" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetAllDivisions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDivisionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetAllFloors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFloors" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetAllFloors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFloorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetAllFloorsNoImg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFloorsNoImg" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetAllFloorsNoImg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFloorsNoImgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetAllSeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSeats" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetAllSeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetDivisionByEmployeeID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionByEmployeeID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetDivisionByEmployeeID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionByEmployeeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetDivisionEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetDivisionEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetDivisionEmployeeNoSeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionEmployeeNoSeat" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetDivisionEmployeeNoSeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionEmployeeNoSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeByFloorID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeByFloorID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeByFloorID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeByFloorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeByID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeByNoSeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeByNoSeat" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeByNoSeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeByNoSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeIDByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeIDByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeIDByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeIDByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeNameByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNameByID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeNameByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNameByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeNameByIDEmpType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNameByIDEmpType" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeNameByIDEmpType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNameByIDEmpTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeNameBySeatID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNameBySeatID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeNameBySeatID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNameBySeatIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeStatus" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmpByFloorID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmpByFloorID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmpByFloorID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmpByFloorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmpByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmpByID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmpByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmpByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmp" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmpByNoSeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmpByNoSeat" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmpByNoSeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmpByNoSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmpNewID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmpNewID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetEmployeeTmpNewID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeTmpNewIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetFloorByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFloorByID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetFloorByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFloorByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetInternByFloorID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInternByFloorID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetInternByFloorID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInternByFloorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetInternByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInternByID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetInternByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInternByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetIntern_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIntern" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetIntern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInternResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetInternByNoSeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInternByNoSeat" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetInternByNoSeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInternByNoSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetRoomByFloorID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomByFloorID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetRoomByFloorID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomByFloorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetRoomByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomByID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetRoomByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatAllHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatAllHistory" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatAllHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatAllHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatHistoryByIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatHistoryByIP" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatHistoryByIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatHistoryByIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatHistoryByIPDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatHistoryByIPDay" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatHistoryByIPDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatHistoryByIPDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatHistoryByIDType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatHistoryByIDType" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatHistoryByIDType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatHistoryByIDTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatHistoryByIPType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatHistoryByIPType" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatHistoryByIPType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatHistoryByIPTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatsByFloorID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatsByFloorID" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatsByFloorID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatsByFloorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatByIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatByIP" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatByIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatByIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatsByFloorIDRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatsByFloorIDRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetSeatsByFloorIDRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatsByFloorIDRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateEmployeeTmp_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeTmp" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateEmployeeTmp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeTmpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateFloor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFloor" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateFloor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFloorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateIntern_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIntern" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateIntern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInternResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateOnlineHisAllOffline_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOnlineHisAllOffline" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateOnlineHisAllOffline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOnlineHisAllOfflineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateOnlineStatusAllOffline_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOnlineStatusAllOffline" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateOnlineStatusAllOffline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOnlineStatusAllOfflineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateRooms_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRooms" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateRooms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRoomsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateSeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSeats" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UpdateSeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UserLoginAnonymous_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginAnonymous" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UserLoginAnonymous_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginAnonymousResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UserLogout_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogout" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_UserLogout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetUserIDByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IHRSeat_GetUserIDByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHRSeat">
+    <wsdl:operation name="CheckOnline">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/CheckOnline" message="tns:IHRSeat_CheckOnline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/CheckOnlineResponse" message="tns:IHRSeat_CheckOnline_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFloor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/DeleteFloor" message="tns:IHRSeat_DeleteFloor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/DeleteFloorResponse" message="tns:IHRSeat_DeleteFloor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoomsAndSeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/DeleteRoomsAndSeats" message="tns:IHRSeat_DeleteRoomsAndSeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/DeleteRoomsAndSeatsResponse" message="tns:IHRSeat_DeleteRoomsAndSeats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeatByRoomID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/DeleteSeatByRoomID" message="tns:IHRSeat_DeleteSeatByRoomID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/DeleteSeatByRoomIDResponse" message="tns:IHRSeat_DeleteSeatByRoomID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeatBySeatID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/DeleteSeatBySeatID" message="tns:IHRSeat_DeleteSeatBySeatID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/DeleteSeatBySeatIDResponse" message="tns:IHRSeat_DeleteSeatBySeatID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeatsByFloorID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/DeleteSeatsByFloorID" message="tns:IHRSeat_DeleteSeatsByFloorID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/DeleteSeatsByFloorIDResponse" message="tns:IHRSeat_DeleteSeatsByFloorID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportContracts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/ExportContracts" message="tns:IHRSeat_ExportContracts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/ExportContractsResponse" message="tns:IHRSeat_ExportContracts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportContractsByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/ExportContractsByName" message="tns:IHRSeat_ExportContractsByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/ExportContractsByNameResponse" message="tns:IHRSeat_ExportContractsByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDivisions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetAllDivisions" message="tns:IHRSeat_GetAllDivisions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetAllDivisionsResponse" message="tns:IHRSeat_GetAllDivisions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFloors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetAllFloors" message="tns:IHRSeat_GetAllFloors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetAllFloorsResponse" message="tns:IHRSeat_GetAllFloors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFloorsNoImg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetAllFloorsNoImg" message="tns:IHRSeat_GetAllFloorsNoImg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetAllFloorsNoImgResponse" message="tns:IHRSeat_GetAllFloorsNoImg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetAllSeats" message="tns:IHRSeat_GetAllSeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetAllSeatsResponse" message="tns:IHRSeat_GetAllSeats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisionByEmployeeID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetDivisionByEmployeeID" message="tns:IHRSeat_GetDivisionByEmployeeID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetDivisionByEmployeeIDResponse" message="tns:IHRSeat_GetDivisionByEmployeeID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisionEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetDivisionEmployee" message="tns:IHRSeat_GetDivisionEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetDivisionEmployeeResponse" message="tns:IHRSeat_GetDivisionEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisionEmployeeNoSeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetDivisionEmployeeNoSeat" message="tns:IHRSeat_GetDivisionEmployeeNoSeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetDivisionEmployeeNoSeatResponse" message="tns:IHRSeat_GetDivisionEmployeeNoSeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeByFloorID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeByFloorID" message="tns:IHRSeat_GetEmployeeByFloorID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeByFloorIDResponse" message="tns:IHRSeat_GetEmployeeByFloorID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeByID" message="tns:IHRSeat_GetEmployeeByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeByIDResponse" message="tns:IHRSeat_GetEmployeeByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeByNoSeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeByNoSeat" message="tns:IHRSeat_GetEmployeeByNoSeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeByNoSeatResponse" message="tns:IHRSeat_GetEmployeeByNoSeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeIDByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeIDByUserName" message="tns:IHRSeat_GetEmployeeIDByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeIDByUserNameResponse" message="tns:IHRSeat_GetEmployeeIDByUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNameByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeNameByID" message="tns:IHRSeat_GetEmployeeNameByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeNameByIDResponse" message="tns:IHRSeat_GetEmployeeNameByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNameByIDEmpType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeNameByIDEmpType" message="tns:IHRSeat_GetEmployeeNameByIDEmpType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeNameByIDEmpTypeResponse" message="tns:IHRSeat_GetEmployeeNameByIDEmpType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNameBySeatID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeNameBySeatID" message="tns:IHRSeat_GetEmployeeNameBySeatID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeNameBySeatIDResponse" message="tns:IHRSeat_GetEmployeeNameBySeatID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeStatus" message="tns:IHRSeat_GetEmployeeStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeStatusResponse" message="tns:IHRSeat_GetEmployeeStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmpByFloorID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmpByFloorID" message="tns:IHRSeat_GetEmployeeTmpByFloorID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmpByFloorIDResponse" message="tns:IHRSeat_GetEmployeeTmpByFloorID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmpByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmpByID" message="tns:IHRSeat_GetEmployeeTmpByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmpByIDResponse" message="tns:IHRSeat_GetEmployeeTmpByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmp" message="tns:IHRSeat_GetEmployeeTmp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmpResponse" message="tns:IHRSeat_GetEmployeeTmp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmpByNoSeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmpByNoSeat" message="tns:IHRSeat_GetEmployeeTmpByNoSeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmpByNoSeatResponse" message="tns:IHRSeat_GetEmployeeTmpByNoSeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmpNewID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmpNewID" message="tns:IHRSeat_GetEmployeeTmpNewID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetEmployeeTmpNewIDResponse" message="tns:IHRSeat_GetEmployeeTmpNewID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFloorByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetFloorByID" message="tns:IHRSeat_GetFloorByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetFloorByIDResponse" message="tns:IHRSeat_GetFloorByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInternByFloorID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetInternByFloorID" message="tns:IHRSeat_GetInternByFloorID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetInternByFloorIDResponse" message="tns:IHRSeat_GetInternByFloorID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInternByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetInternByID" message="tns:IHRSeat_GetInternByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetInternByIDResponse" message="tns:IHRSeat_GetInternByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIntern">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetIntern" message="tns:IHRSeat_GetIntern_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetInternResponse" message="tns:IHRSeat_GetIntern_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInternByNoSeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetInternByNoSeat" message="tns:IHRSeat_GetInternByNoSeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetInternByNoSeatResponse" message="tns:IHRSeat_GetInternByNoSeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomByFloorID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetRoomByFloorID" message="tns:IHRSeat_GetRoomByFloorID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetRoomByFloorIDResponse" message="tns:IHRSeat_GetRoomByFloorID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetRoomByID" message="tns:IHRSeat_GetRoomByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetRoomByIDResponse" message="tns:IHRSeat_GetRoomByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatAllHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetSeatAllHistory" message="tns:IHRSeat_GetSeatAllHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetSeatAllHistoryResponse" message="tns:IHRSeat_GetSeatAllHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatHistoryByIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetSeatHistoryByIP" message="tns:IHRSeat_GetSeatHistoryByIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetSeatHistoryByIPResponse" message="tns:IHRSeat_GetSeatHistoryByIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatHistoryByIPDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetSeatHistoryByIPDay" message="tns:IHRSeat_GetSeatHistoryByIPDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetSeatHistoryByIPDayResponse" message="tns:IHRSeat_GetSeatHistoryByIPDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatHistoryByIDType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetSeatHistoryByIDType" message="tns:IHRSeat_GetSeatHistoryByIDType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetSeatHistoryByIDTypeResponse" message="tns:IHRSeat_GetSeatHistoryByIDType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatHistoryByIPType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetSeatHistoryByIPType" message="tns:IHRSeat_GetSeatHistoryByIPType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetSeatHistoryByIPTypeResponse" message="tns:IHRSeat_GetSeatHistoryByIPType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatsByFloorID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetSeatsByFloorID" message="tns:IHRSeat_GetSeatsByFloorID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetSeatsByFloorIDResponse" message="tns:IHRSeat_GetSeatsByFloorID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatByIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetSeatByIP" message="tns:IHRSeat_GetSeatByIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetSeatByIPResponse" message="tns:IHRSeat_GetSeatByIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatsByFloorIDRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetSeatsByFloorIDRefresh" message="tns:IHRSeat_GetSeatsByFloorIDRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetSeatsByFloorIDRefreshResponse" message="tns:IHRSeat_GetSeatsByFloorIDRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UpdateEmployee" message="tns:IHRSeat_UpdateEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UpdateEmployeeResponse" message="tns:IHRSeat_UpdateEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeTmp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UpdateEmployeeTmp" message="tns:IHRSeat_UpdateEmployeeTmp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UpdateEmployeeTmpResponse" message="tns:IHRSeat_UpdateEmployeeTmp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFloor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UpdateFloor" message="tns:IHRSeat_UpdateFloor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UpdateFloorResponse" message="tns:IHRSeat_UpdateFloor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIntern">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UpdateIntern" message="tns:IHRSeat_UpdateIntern_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UpdateInternResponse" message="tns:IHRSeat_UpdateIntern_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnlineHisAllOffline">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UpdateOnlineHisAllOffline" message="tns:IHRSeat_UpdateOnlineHisAllOffline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UpdateOnlineHisAllOfflineResponse" message="tns:IHRSeat_UpdateOnlineHisAllOffline_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnlineStatusAllOffline">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UpdateOnlineStatusAllOffline" message="tns:IHRSeat_UpdateOnlineStatusAllOffline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UpdateOnlineStatusAllOfflineResponse" message="tns:IHRSeat_UpdateOnlineStatusAllOffline_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRooms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UpdateRooms" message="tns:IHRSeat_UpdateRooms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UpdateRoomsResponse" message="tns:IHRSeat_UpdateRooms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UpdateSeats" message="tns:IHRSeat_UpdateSeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UpdateSeatsResponse" message="tns:IHRSeat_UpdateSeats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UserLogin" message="tns:IHRSeat_UserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UserLoginResponse" message="tns:IHRSeat_UserLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLoginAnonymous">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UserLoginAnonymous" message="tns:IHRSeat_UserLoginAnonymous_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UserLoginAnonymousResponse" message="tns:IHRSeat_UserLoginAnonymous_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/UserLogout" message="tns:IHRSeat_UserLogout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/UserLogoutResponse" message="tns:IHRSeat_UserLogout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHRSeat/GetUserIDByUserName" message="tns:IHRSeat_GetUserIDByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHRSeat/GetUserIDByUserNameResponse" message="tns:IHRSeat_GetUserIDByUserName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IHRSeat" type="tns:IHRSeat">
+    <wsp:PolicyReference URI="#WSHttpBinding_IHRSeat_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckOnline">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/CheckOnline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFloor">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/DeleteFloor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoomsAndSeats">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/DeleteRoomsAndSeats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeatByRoomID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/DeleteSeatByRoomID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeatBySeatID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/DeleteSeatBySeatID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeatsByFloorID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/DeleteSeatsByFloorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportContracts">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/ExportContracts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportContractsByName">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/ExportContractsByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDivisions">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetAllDivisions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFloors">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetAllFloors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFloorsNoImg">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetAllFloorsNoImg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSeats">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetAllSeats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisionByEmployeeID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetDivisionByEmployeeID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisionEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetDivisionEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisionEmployeeNoSeat">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetDivisionEmployeeNoSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeByFloorID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeByFloorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeByID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeByNoSeat">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeByNoSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeIDByUserName">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeIDByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNameByID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeNameByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNameByIDEmpType">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeNameByIDEmpType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNameBySeatID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeNameBySeatID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeStatus">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmpByFloorID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeTmpByFloorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmpByID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeTmpByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmp">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeTmp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmpByNoSeat">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeTmpByNoSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeTmpNewID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetEmployeeTmpNewID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFloorByID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetFloorByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInternByFloorID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetInternByFloorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInternByID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetInternByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntern">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetIntern" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInternByNoSeat">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetInternByNoSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomByFloorID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetRoomByFloorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomByID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetRoomByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatAllHistory">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetSeatAllHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatHistoryByIP">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetSeatHistoryByIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatHistoryByIPDay">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetSeatHistoryByIPDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatHistoryByIDType">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetSeatHistoryByIDType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatHistoryByIPType">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetSeatHistoryByIPType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatsByFloorID">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetSeatsByFloorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatByIP">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetSeatByIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatsByFloorIDRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetSeatsByFloorIDRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeTmp">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UpdateEmployeeTmp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFloor">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UpdateFloor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIntern">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UpdateIntern" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnlineHisAllOffline">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UpdateOnlineHisAllOffline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnlineStatusAllOffline">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UpdateOnlineStatusAllOffline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRooms">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UpdateRooms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSeats">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UpdateSeats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UserLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLoginAnonymous">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UserLoginAnonymous" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogout">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/UserLogout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDByUserName">
+      <soap12:operation soapAction="http://tempuri.org/IHRSeat/GetUserIDByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HRSeatService">
+    <wsdl:port name="WSHttpBinding_IHRSeat" binding="tns:WSHttpBinding_IHRSeat">
+      <soap12:address location="http://127.0.0.1:8733/Design_Time_Addresses/HRSeatServer/Service1/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://127.0.0.1:8733/Design_Time_Addresses/HRSeatServer/Service1/</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

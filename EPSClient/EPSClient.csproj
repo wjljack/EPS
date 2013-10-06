@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5E3E6C45-AD0E-42D5-AD2A-A474DF47E512}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRSeat</RootNamespace>
+    <AssemblyName>EPSClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\wangjunlong\Desktop\EPS Setup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>main.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3982A0AD360362CA99F866388A841A02F688B7B3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HRSeat_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>.\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>..\Lib\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="GZipEncoder, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\GZipEncoder.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\wangjunlong\Desktop\npoi\dotnet4\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonClass\CommonFunction.cs" />
+    <Compile Include="CommonClass\Encryption.cs" />
+    <Compile Include="CommonClass\Enums.cs" />
+    <Compile Include="CommonClass\ExcelOperater.cs" />
+    <Compile Include="CommonClass\FormSet.cs" />
+    <Compile Include="CommonClass\IniFile.cs" />
+    <Compile Include="CommonClass\MD5.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeSelect.Designer.cs">
+      <DependentUpon>frmEmployeeSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeStatus.Designer.cs">
+      <DependentUpon>frmEmployeeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIPSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIPSet.Designer.cs">
+      <DependentUpon>frmIPSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLauncher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLauncher.Designer.cs">
+      <DependentUpon>frmLauncher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeatHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeatHistory.Designer.cs">
+      <DependentUpon>frmSeatHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeatView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeatView.Designer.cs">
+      <DependentUpon>frmSeatView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmView.Designer.cs">
+      <DependentUpon>frmView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISplashForm.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmSeatEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeatEdit.Designer.cs">
+      <DependentUpon>frmSeatEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HRSeatServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service References\ScheduleServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Splasher.cs" />
+    <Compile Include="frmEXPSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEXPSet.Designer.cs">
+      <DependentUpon>frmEXPSet.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeSelect.resx">
+      <DependentUpon>frmEmployeeSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeStatus.resx">
+      <DependentUpon>frmEmployeeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIPSet.resx">
+      <DependentUpon>frmIPSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLauncher.resx">
+      <DependentUpon>frmLauncher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeatHistory.resx">
+      <DependentUpon>frmSeatHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeatView.resx">
+      <DependentUpon>frmSeatView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmView.resx">
+      <DependentUpon>frmView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="frmSeatEdit.resx">
+      <DependentUpon>frmSeatEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEXPSet.resx">
+      <DependentUpon>frmEXPSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat1.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat10.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat11.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat12.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat121.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat13.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat14.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat15.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat16.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat17.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat18.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat19.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat2.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat20.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat21.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat22.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat23.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat24.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat25.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat26.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat27.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat28.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat29.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat3.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat30.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat31.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat32.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat33.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat34.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat35.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat36.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat37.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat38.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat39.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat4.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat40.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat41.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat42.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat43.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat5.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat6.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat7.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat8.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_HRSeat9.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.DataSet_Schedule.datasource" />
+    <None Include="Properties\DataSources\HRSeatServer.SeatMap.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\HRSeatServiceReference\DataSet_HRSeat.xsd" />
+    <None Include="Service References\HRSeatServiceReference\HRSeat.HRSeatServiceReference.DataSet_HRSeat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRSeatServiceReference\HRSeat.HRSeatServiceReference.LoginReturnStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HRSeatServiceReference\HRSeatServer.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HRSeatServiceReference\service.wsdl" />
+    <None Include="Service References\HRSeatServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HRSeatServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScheduleServiceReference\DataSet_Schedule.xsd" />
+    <None Include="Service References\ScheduleServiceReference\HRSeat.ScheduleServiceReference.DataSet_Schedule.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ScheduleServiceReference\HRSeatServer.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScheduleServiceReference\service.wsdl" />
+    <None Include="Service References\ScheduleServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScheduleServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CommonClass\NPOIdotnet4\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="CommonClass\NPOIdotnet4\NPOI.dll" />
+    <Content Include="CommonClass\NPOIdotnet4\NPOI.OOXML.dll" />
+    <Content Include="CommonClass\NPOIdotnet4\NPOI.OpenXml4Net.dll" />
+    <Content Include="CommonClass\NPOIdotnet4\NPOI.OpenXmlFormats.dll" />
+    <Content Include="CommonClass\NPOIdotnet4\NPOI.XML" />
+    <Content Include="Images\button_lod.png" />
+    <Content Include="Images\button_lod_down.png" />
+    <Content Include="Images\button_lod_over.png" />
+    <Content Include="Images\drag.cur" />
+    <Content Include="Images\drag.png" />
+    <Content Include="main.ico" />
+    <None Include="Service References\ScheduleServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ScheduleServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ScheduleServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\HRSeatServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HRSeatServiceReference\configuration.svcinfo" />
+    <None Include="Service References\HRSeatServiceReference\configuration91.svcinfo" />
+    <None Include="Resources\step11.png" />
+    <None Include="Resources\step1.png" />
+    <None Include="Resources\step2.png" />
+    <None Include="Resources\step3.png" />
+    <None Include="Images\export_BUTTON_down.png" />
+    <None Include="Images\export_BUTTON_over.png" />
+    <None Include="Images\export_BUTTON_up.png" />
+    <None Include="Images\Exit_down.png" />
+    <None Include="Images\Exit_over.png" />
+    <None Include="Images\Exit_up.png" />
+    <Content Include="Images\Login_bj.png" />
+    <Content Include="Images\offline.ico" />
+    <Content Include="Images\offline.png" />
+    <Content Include="Images\online.ico" />
+    <Content Include="Images\online.png" />
+    <Content Include="Images\online2.ico" />
+    <Content Include="Images\online2.png" />
+    <Content Include="Images\ContractsEXP.png" />
+    <None Include="Images\UserInline_down.png" />
+    <None Include="Images\UserInline_over.png" />
+    <None Include="Images\UserInline_up.png" />
+    <None Include="Images\UserInline_diable.png" />
+    <None Include="Images\view_button_bj_down.png" />
+    <None Include="Images\view_button_bj_over.png" />
+    <None Include="Images\view_button_bj_up.png" />
+    <Content Include="Images\xbutton.png" />
+    <None Include="Resources\step1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HRSeatServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ScheduleServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Schedule\OASchedule.csproj">
+      <Project>{4709FFC2-EFE3-4B08-B34C-2D7CD427C327}</Project>
+      <Name>OASchedule</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
